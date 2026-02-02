@@ -146,6 +146,15 @@
         }
     </style>
     <style>
+        @font-face {
+            font-family: 'IBM Plex Mono';
+            src: url('./fonts/IBMPlexMono-Regular.woff2') format('woff2'),
+                url('./fonts/IBMPlexMono-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --small-spacing: 1rem;
             --large-spacing: 3rem;
@@ -153,8 +162,8 @@
             --grey: #ededed;
         }
 
-
         body {
+            font-family: 'IBM Plex Mono';
             background-color: var(--black);
             color: var(--grey);
         }
@@ -206,37 +215,38 @@
     </style>
 </head>
 
-<body style="font-family: 'sans-serif', serif; margin: var(--small-spacing); line-height: 1.4;">
+<body style="margin: var(--small-spacing); line-height: 1.4;">
     <img src="./baillie-ogrady.png" alt="Baillie O'Grady"
         style="max-width: 5rem; border: 2px solid white; margin-bottom: var(--small-spacing);" />
-    <div style="display: flex; gap: 6rem; flex-wrap: wrap;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
         <div>
-            <p style="margin-bottom: var(--small-spacing);">[ About ]</p>
             <div style="max-width: 360px; margin-bottom: var(--large-spacing);">
                 <div style="margin-bottom: var(--large-spacing);">
+                    <h2 style="margin-bottom: var(--small-spacing);">[ about ]</h2>
+
                     <p style="margin-bottom: var(--small-spacing);">
-                        Hello, I'm Baillie O'Grady, a Freelance WordPress Theme developer from Manchester, England. 
+                        Hello, I'm Baillie O'Grady, a Freelance WordPress Theme developer from Manchester, England.
                     </p>
                     <p style="margin-bottom: var(--small-spacing);">
                         I primarily build custom WordPress themes from Figma designs -
                         <a href="https://github.com/baillieogrady/starter-theme">my starter theme</a>
                     </p>
                     <p style="margin-bottom: var(--small-spacing);">I use ACF Pro's Flexible Content to build a
-                        lightweight,
-                        editable page builder, styled with Tailwind CSS.
+                        lightweight editable page builder.
                     <p style="margin-bottom: var(--small-spacing);" id="hover-text">
                         When not working I enjoy tearing apart my <a href="https://r56repo.com/">R56 Mini Cooper S</a>,
-                        watching Netflix and going for canal walks - move your cursor over this text 👀
+                        watching Netflix and going for canal walks.
                     </p>
                     <p style="margin-bottom: var(--small-spacing);">
-                        <a href="mailto:hello@baillieogrady.com">hello@baillieogrady.com</a>, <a
-                            href="https://www.linkedin.com/in/baillie-o-grady-4949083a3/">LinkedIn</a>
+                        <a href="mailto:hello@baillieogrady.com">Email</a>, <a
+                            href="https://www.linkedin.com/in/baillie-o-grady-4949083a3/">LinkedIn</a>,
+                        <a href="https://www.youtube.com/@baillieogrady">YouTube</a>
                     </p>
                 </div>
             </div>
         </div>
         <div>
-            <h2 style="margin-bottom: var(--small-spacing);">[ Work ]</h2>
+            <h2 style="margin-bottom: var(--small-spacing);">[ work ]</h2>
             <ul>
                 <li>
                     <a href="https://harlem.capital">harlem.capital</a> - WordPress theme
@@ -251,8 +261,8 @@
                     <a href="https://hotpmo.com">hotpmo.com</a> - WordPress theme
                 </li>
                 <li>
-                    <a href="https://captainscotton.com">captainscotton.com</a> - Ecommerce website using Sveltekit,
-                    Stripe API & Cloudflare KV
+                    <a href="https://captainscotton.com">captainscotton.com</a> - Ecommerce website using Sveltekit &
+                    Stripe API
                 </li>
                 <li>
                     <a href="https://pawsomewalkscongleton.com/">pawsomewalkscongleton.com</a> - Static website using
