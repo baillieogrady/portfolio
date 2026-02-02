@@ -167,6 +167,43 @@
             text-decoration: none;
         }
     </style>
+
+    <!-- image spawning styles -->
+    <style>
+        #hover-text {
+            width: fit-content;
+        }
+
+        .spawned-img {
+            position: fixed;
+            pointer-events: none;
+            width: 5.25rem;
+            z-index: 9999;
+            border: 2px solid white;
+
+            opacity: 0;
+            animation: fadeIn 1s ease forwards,
+                fadeOut 1.5s ease forwards 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body style="font-family: 'sans-serif', serif; margin: var(--small-spacing); line-height: 1.4;">
@@ -187,8 +224,13 @@
                     <p style="margin-bottom: var(--small-spacing);">
                         I primarily work white-label for web agencies on new projects.
                     </p>
+                    <p style="margin-bottom: var(--small-spacing);" id="hover-text">
+                        When not working I enjoy tearing apart my <a href="https://r56repo.com/">R56 Mini Cooper S</a>,
+                        watching Netflix and going for canal walks. [move your cursor over this text]
+                    </p>
                     <p style="margin-bottom: var(--small-spacing);">
-                        <a href="mailto:hello@baillieogrady.com">hello@baillieogrady.com</a>
+                        <a href="mailto:hello@baillieogrady.com">hello@baillieogrady.com</a>, <a
+                            href="https://www.linkedin.com/in/baillie-o-grady-4949083a3/">LinkedIn</a>
                     </p>
                 </div>
             </div>
@@ -209,11 +251,113 @@
                     <a href="https://hotpmo.com">hotpmo.com</a> - WordPress theme
                 </li>
                 <li>
-                    <a href="https://captainscotton.com">captainscotton.com</a> - Sveltekit, Stripe API & Cloudflare KV
+                    <a href="https://captainscotton.com">captainscotton.com</a> - Ecommerce website using Sveltekit,
+                    Stripe API & Cloudflare KV
+                </li>
+                <li>
+                    <a href="https://pawsomewalkscongleton.com/">pawsomewalkscongleton.com</a> - Static website using
+                    Astro.js
+                </li>
+                <li>
+                    <a href="https://acbrands.co.uk/">acbrands.co.uk</a> - Static website using Astro.js
+                </li>
+                <li>
+                    <a href="https://r56repo.com/">r56repo.com</a> - Static website using Astro.js
                 </li>
             </ul>
         </div>
     </div>
+
+    <script>
+        const p = document.getElementById("hover-text");
+
+        // image list (fill this dynamically however you like)
+        const images = [
+            "./images/canal.jpg",
+            "./images/canal-birds.jpg",
+            "./images/black-mirror-nosedive.jpg",
+            "./images/black-mirror-uss-callister.jpg",
+            "./images/kpop-demon-hunters.jpg",
+            "./images/r56-mini-cooper-s.jpg",
+            "./images/r56-mini-cooper-s-jcw-seats.jpg",
+            "./images/squid-game.jpg",
+        ];
+
+
+        const activeImages = new Set();
+
+        let hovering = false;
+        let lastSpawnX = null;
+        let lastSpawnY = null;
+        let lastSpawnTime = 0;
+
+        const MIN_DISTANCE = 35; // px
+        const MIN_TIME = 150;    // ms
+
+        p.addEventListener("mouseenter", (e) => {
+            hovering = true;
+            lastSpawnX = e.clientX;
+            lastSpawnY = e.clientY;
+            lastSpawnTime = performance.now();
+        });
+
+        p.addEventListener("mouseleave", () => {
+            hovering = false;
+            lastSpawnX = null;
+            lastSpawnY = null;
+        });
+
+        p.addEventListener("mousemove", (e) => {
+            if (!hovering) return;
+
+            const now = performance.now();
+
+            // time gate
+            if (now - lastSpawnTime < MIN_TIME) return;
+
+            const dx = e.clientX - lastSpawnX;
+            const dy = e.clientY - lastSpawnY;
+            const distance = Math.hypot(dx, dy);
+
+            // distance gate
+            if (distance < MIN_DISTANCE) return;
+
+            // choose an image not currently active
+            const availableImages = images.filter(src => !activeImages.has(src));
+            if (availableImages.length === 0) return;
+
+            // OPTIONAL randomness
+            if (Math.random() > 0.5) return;
+
+            const src = availableImages[
+                Math.floor(Math.random() * availableImages.length)
+            ];
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.className = "spawned-img";
+
+            activeImages.add(src);
+
+            const offsetX = (Math.random() - 0.5) * 120;
+            const offsetY = (Math.random() - 0.5) * 120;
+
+            img.style.left = e.clientX + offsetX + "px";
+            img.style.top = e.clientY + offsetY + "px";
+
+            document.body.appendChild(img);
+
+            setTimeout(() => {
+                img.remove();
+                activeImages.delete(src);
+            }, 3000);
+
+            // update spawn reference ONLY after spawning
+            lastSpawnX = e.clientX;
+            lastSpawnY = e.clientY;
+            lastSpawnTime = now;
+        });
+    </script>
 </body>
 
 </html>
