@@ -1,368 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baillie O'Grady - Freelance WordPress Theme Developer</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- styles -->
     <style>
-        /* http://meyerweb.com/eric/tools/css/reset/ 
+      /* http://meyerweb.com/eric/tools/css/reset/ 
         v2.0 | 20110126
         License: none (public domain)
     */
 
-        html,
-        body,
-        div,
-        span,
-        applet,
-        object,
-        iframe,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        center,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
 
-        /* HTML5 display-role reset for older browsers */
-        article,
-        aside,
-        details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        section {
-            display: block;
-        }
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
 
-        body {
-            line-height: 1;
-        }
+      body {
+        line-height: 1;
+      }
 
-        ol,
-        ul {
-            list-style: none;
-        }
+      ol,
+      ul {
+        list-style: none;
+      }
 
-        blockquote,
-        q {
-            quotes: none;
-        }
+      blockquote,
+      q {
+        quotes: none;
+      }
 
-        blockquote:before,
-        blockquote:after,
-        q:before,
-        q:after {
-            content: '';
-            content: none;
-        }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
 
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
     </style>
     <style>
-        @font-face {
-            font-family: 'IBM Plex Mono';
-            src: url('./fonts/IBMPlexMono-Regular.woff2') format('woff2'),
-                url('./fonts/IBMPlexMono-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
+      @font-face {
+        font-family: "IBM Plex Mono";
+        src:
+          url("./fonts/IBMPlexMono-Regular.woff2") format("woff2"),
+          url("./fonts/IBMPlexMono-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
 
-        :root {
-            --small-spacing: 1rem;
-            --large-spacing: 3rem;
-            --black: #141414;
-            --grey: #ededed;
-        }
+      :root {
+        --small-spacing: 1rem;
+        --large-spacing: 3rem;
+        --black: #141414;
+        --grey: #ededed;
+      }
 
-        body {
-            font-family: 'IBM Plex Mono';
-            background-color: var(--black);
-            color: var(--grey);
-        }
+      body {
+        font-family: "IBM Plex Mono";
+        background-color: var(--black);
+        color: var(--grey);
+      }
 
-        a {
-            color: var(--grey);
-        }
+      a {
+        color: var(--grey);
+      }
 
-        a:hover {
-            text-decoration: none;
-        }
+      a:hover {
+        text-decoration: none;
+      }
     </style>
 
     <!-- image spawning styles -->
     <style>
-        #hover-text {
-            width: fit-content;
+      #hover-text {
+        width: fit-content;
+      }
+
+      .spawned-img {
+        position: fixed;
+        pointer-events: none;
+        width: 5.25rem;
+        z-index: 9999;
+        border: 2px solid white;
+
+        opacity: 0;
+        animation:
+          fadeIn 1s ease forwards,
+          fadeOut 1.5s ease forwards 1.5s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
         }
 
-        .spawned-img {
-            position: fixed;
-            pointer-events: none;
-            width: 5.25rem;
-            z-index: 9999;
-            border: 2px solid white;
-
-            opacity: 0;
-            animation: fadeIn 1s ease forwards,
-                fadeOut 1.5s ease forwards 1.5s;
+        to {
+          opacity: 1;
+          transform: scale(1);
         }
+      }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
         }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body style="margin: var(--small-spacing); line-height: 1.4;">
-    <img src="./baillie-ogrady.png" alt="Baillie O'Grady"
-        style="max-width: 5rem; border: 2px solid white; margin-bottom: var(--small-spacing);" />
-    <div style="display: flex; flex-wrap: wrap; gap: 6rem;">
-        <div>
-            <div style="max-width: 360px;">
-                <p style="margin-bottom: var(--small-spacing);">
-                    Baillie O'Grady - Freelance WordPress theme developer
-                </p>
-                <p style="margin-bottom: var(--small-spacing);">
-                    8 years of experience building custom WordPress themes from Figma designs, working exclusively with web agencies worldwide.
-                </p>
-                <p style="margin-bottom: var(--small-spacing);">
-                    In summary, I primarily use ACF Pro with Flexible Content, Tailwind CSS, and Vite.js to build fast and intuitive WordPress themes. I break designs down into reusable content blocks such as heroes, sliders, and banners, creating flexible layouts for each block, while global elements like headers and footers are managed through ACF Options.
-                </p>
-                <p style="margin-bottom: var(--small-spacing);">
-                    When not working I like to tear my <a href="https://la07nkk.com">2007 Mini Cooper S</a> apart, watch films and go to meet up events in town.
-                </p>
+  <body style="margin: var(--small-spacing); line-height: 1.4">
+    <img
+      src="./baillie-ogrady.png"
+      alt="Baillie O'Grady"
+      style="
+        max-width: 5rem;
+        border: 2px solid white;
+        margin-bottom: var(--small-spacing);
+      "
+    />
+    <div style="display: flex; flex-wrap: wrap; gap: 6rem">
+      <div>
+        <div style="max-width: 360px">
+          <p style="margin-bottom: var(--small-spacing)">
+            Baillie O'Grady - Freelance WordPress theme developer
+          </p>
+          <p style="margin-bottom: var(--small-spacing)">
+            8 years of experience building custom WordPress themes from Figma
+            designs, working exclusively with web agencies worldwide.
+          </p>
+          <p style="margin-bottom: var(--small-spacing)">
+            In summary, I primarily use ACF Pro with Flexible Content, Tailwind
+            CSS, and Vite.js to build fast and intuitive WordPress themes. I
+            break designs down into reusable content blocks such as heroes,
+            sliders, and banners, creating flexible layouts for each block,
+            while global elements like headers and footers are managed through
+            ACF Options.
+          </p>
+          <p style="margin-bottom: var(--small-spacing)">
+            Brutalism is my favourite web design, examples include
+            <a href="https://studio-otto.com/">studio-otto.com</a>,
+            <a href="https://www.yrstruly.uk/">yrstruly.uk</a>,
+            <a href="https://vanholtz.co/">vanholtz.co</a> and <a href="http://pawpoulsen.dk/">pawpoulsen.dk</a>.
+          </p>
+          <p style="margin-bottom: var(--small-spacing)">
+            When not working I like to tear my
+            <a href="https://la07nkk.com">2007 Mini Cooper S</a> apart, watch
+            films and go to meet up events in town.
+          </p>
 
-                <p style="margin-bottom: var(--small-spacing);">
-                    <a href="mailto:hello@baillieogrady.com">Email</a>
-                </p>
-            </div>
+          <p style="margin-bottom: var(--small-spacing)">
+            <a href="mailto:hello@baillieogrady.com">Email</a>
+          </p>
         </div>
-        <div>
-            <p style="margin-bottom: var(--small-spacing);">
-                Work:
-            </p>
-            <ul style="display: flex; flex-direction: column; gap: .5rem;">
-                <li>
-                    <a href="https://github.com/baillieogrady/starter-theme">Starter theme</a>
-                </li>
-                <li>
-                    <a href="https://harlem.capital">harlem.capital</a> - WordPress theme
-                </li>
-                <li>
-                    <a href="https://whatahowler.com">whatahowler.com</a> - WordPress theme
-                </li>
-                <li>
-                    <a href="https://thehordern.com.au">thehordern.com.au</a> - WordPress theme
-                </li>
-                <li>
-                    <a href="https://hotpmo.com">hotpmo.com</a> - WordPress theme
-                </li>
-                <li>
-                    <a href="https://captainscotton.com">captainscotton.com</a> - Sveltekit & Stripe API Ecommerce
-                    website
-                </li>
-                <li>
-                    <a href="https://pawsomewalkscongleton.com/">pawsomewalkscongleton.com</a> - Astro.js static website
-                </li>
-                <li>
-                    <a href="https://la07nkk.com/">la07nkk.com</a> - Astro.js static website
-                </li>
-            </ul>
-        </div>
+      </div>
+      <div>
+        <p style="margin-bottom: var(--small-spacing)">Work:</p>
+        <ul style="display: flex; flex-direction: column; gap: 0.5rem">
+          <li>
+            <a href="https://github.com/baillieogrady/starter-theme"
+              >Starter theme</a
+            >
+          </li>
+          <li>
+            <a href="https://www.eastlondonprintmakers.co.uk/">eastlondonprintmakers.co.uk</a> - WordPress
+            theme
+          </li>
+          <li>
+            <a href="https://harlem.capital">harlem.capital</a> - WordPress
+            theme
+          </li>
+          <li>
+            <a href="https://whatahowler.com">whatahowler.com</a> - WordPress
+            theme
+          </li>
+          <li>
+            <a href="https://thehordern.com.au">thehordern.com.au</a> -
+            WordPress theme
+          </li>
+          <li><a href="https://hotpmo.com">hotpmo.com</a> - WordPress theme</li>
+          <li>
+            <a href="https://captainscotton.com">captainscotton.com</a> -
+            Sveltekit & Stripe API Ecommerce website
+          </li>
+          <li>
+            <a href="https://pawsomewalkscongleton.com/"
+              >pawsomewalkscongleton.com</a
+            >
+            - Astro.js static website
+          </li>
+          <li>
+            <a href="https://la07nkk.com/">la07nkk.com</a> - Astro.js static
+            website
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script>
-        const p = document.getElementById("hover-text");
+      const p = document.getElementById("hover-text");
 
-        // image list (fill this dynamically however you like)
-        const images = [
-            "./images/canal.jpg",
-            "./images/canal-birds.jpg",
-            "./images/black-mirror-nosedive.jpg",
-            "./images/black-mirror-uss-callister.jpg",
-            "./images/kpop-demon-hunters.jpg",
-            "./images/r56-mini-cooper-s.jpg",
-            "./images/r56-mini-cooper-s-jcw-seats.jpg",
-            "./images/squid-game.jpg",
-        ];
+      // image list (fill this dynamically however you like)
+      const images = [
+        "./images/canal.jpg",
+        "./images/canal-birds.jpg",
+        "./images/black-mirror-nosedive.jpg",
+        "./images/black-mirror-uss-callister.jpg",
+        "./images/kpop-demon-hunters.jpg",
+        "./images/r56-mini-cooper-s.jpg",
+        "./images/r56-mini-cooper-s-jcw-seats.jpg",
+        "./images/squid-game.jpg",
+      ];
 
+      const activeImages = new Set();
 
-        const activeImages = new Set();
+      let hovering = false;
+      let lastSpawnX = null;
+      let lastSpawnY = null;
+      let lastSpawnTime = 0;
 
-        let hovering = false;
-        let lastSpawnX = null;
-        let lastSpawnY = null;
-        let lastSpawnTime = 0;
+      const MIN_DISTANCE = 35; // px
+      const MIN_TIME = 150; // ms
 
-        const MIN_DISTANCE = 35; // px
-        const MIN_TIME = 150;    // ms
+      p.addEventListener("mouseenter", (e) => {
+        hovering = true;
+        lastSpawnX = e.clientX;
+        lastSpawnY = e.clientY;
+        lastSpawnTime = performance.now();
+      });
 
-        p.addEventListener("mouseenter", (e) => {
-            hovering = true;
-            lastSpawnX = e.clientX;
-            lastSpawnY = e.clientY;
-            lastSpawnTime = performance.now();
-        });
+      p.addEventListener("mouseleave", () => {
+        hovering = false;
+        lastSpawnX = null;
+        lastSpawnY = null;
+      });
 
-        p.addEventListener("mouseleave", () => {
-            hovering = false;
-            lastSpawnX = null;
-            lastSpawnY = null;
-        });
+      p.addEventListener("mousemove", (e) => {
+        if (!hovering) return;
 
-        p.addEventListener("mousemove", (e) => {
-            if (!hovering) return;
+        const now = performance.now();
 
-            const now = performance.now();
+        // time gate
+        if (now - lastSpawnTime < MIN_TIME) return;
 
-            // time gate
-            if (now - lastSpawnTime < MIN_TIME) return;
+        const dx = e.clientX - lastSpawnX;
+        const dy = e.clientY - lastSpawnY;
+        const distance = Math.hypot(dx, dy);
 
-            const dx = e.clientX - lastSpawnX;
-            const dy = e.clientY - lastSpawnY;
-            const distance = Math.hypot(dx, dy);
+        // distance gate
+        if (distance < MIN_DISTANCE) return;
 
-            // distance gate
-            if (distance < MIN_DISTANCE) return;
+        // choose an image not currently active
+        const availableImages = images.filter((src) => !activeImages.has(src));
+        if (availableImages.length === 0) return;
 
-            // choose an image not currently active
-            const availableImages = images.filter(src => !activeImages.has(src));
-            if (availableImages.length === 0) return;
+        // OPTIONAL randomness
+        if (Math.random() > 0.5) return;
 
-            // OPTIONAL randomness
-            if (Math.random() > 0.5) return;
+        const src =
+          availableImages[Math.floor(Math.random() * availableImages.length)];
 
-            const src = availableImages[
-                Math.floor(Math.random() * availableImages.length)
-            ];
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "spawned-img";
 
-            const img = document.createElement("img");
-            img.src = src;
-            img.className = "spawned-img";
+        activeImages.add(src);
 
-            activeImages.add(src);
+        const offsetX = (Math.random() - 0.5) * 120;
+        const offsetY = (Math.random() - 0.5) * 120;
 
-            const offsetX = (Math.random() - 0.5) * 120;
-            const offsetY = (Math.random() - 0.5) * 120;
+        img.style.left = e.clientX + offsetX + "px";
+        img.style.top = e.clientY + offsetY + "px";
 
-            img.style.left = e.clientX + offsetX + "px";
-            img.style.top = e.clientY + offsetY + "px";
+        document.body.appendChild(img);
 
-            document.body.appendChild(img);
+        setTimeout(() => {
+          img.remove();
+          activeImages.delete(src);
+        }, 3000);
 
-            setTimeout(() => {
-                img.remove();
-                activeImages.delete(src);
-            }, 3000);
-
-            // update spawn reference ONLY after spawning
-            lastSpawnX = e.clientX;
-            lastSpawnY = e.clientY;
-            lastSpawnTime = now;
-        });
+        // update spawn reference ONLY after spawning
+        lastSpawnX = e.clientX;
+        lastSpawnY = e.clientY;
+        lastSpawnTime = now;
+      });
     </script>
-</body>
-
+  </body>
 </html>
