@@ -5,250 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baillie O'Grady - Freelance WordPress Developer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-    <!-- styles -->
-    <style>
-      /* http://meyerweb.com/eric/tools/css/reset/ 
-        v2.0 | 20110126
-        License: none (public domain)
-    */
-
-      html,
-      body,
-      div,
-      span,
-      applet,
-      object,
-      iframe,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      blockquote,
-      pre,
-      a,
-      abbr,
-      acronym,
-      address,
-      big,
-      cite,
-      code,
-      del,
-      dfn,
-      em,
-      img,
-      ins,
-      kbd,
-      q,
-      s,
-      samp,
-      small,
-      strike,
-      strong,
-      sub,
-      sup,
-      tt,
-      var,
-      b,
-      u,
-      i,
-      center,
-      dl,
-      dt,
-      dd,
-      ol,
-      ul,
-      li,
-      fieldset,
-      form,
-      label,
-      legend,
-      table,
-      caption,
-      tbody,
-      tfoot,
-      thead,
-      tr,
-      th,
-      td,
-      article,
-      aside,
-      canvas,
-      details,
-      embed,
-      figure,
-      figcaption,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      output,
-      ruby,
-      section,
-      summary,
-      time,
-      mark,
-      audio,
-      video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-      }
-
-      /* HTML5 display-role reset for older browsers */
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      section {
-        display: block;
-      }
-
-      body {
-        line-height: 1.4;
-      }
-
-      ol,
-      ul {
-        list-style: none;
-      }
-
-      blockquote,
-      q {
-        quotes: none;
-      }
-
-      blockquote:before,
-      blockquote:after,
-      q:before,
-      q:after {
-        content: "";
-        content: none;
-      }
-
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
-      }
-    </style>
-    <style>
-      @font-face {
-        font-family: "Open Sans";
-        src: url("./fonts/OpenSans-Regular.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "Bebas Neue";
-        src: url("./fonts/BebasNeue-Regular.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      :root {
-        --small-spacing: 1rem;
-        --large-spacing: 3rem;
-        --black: #141414;
-        --grey: #ededed;
-      }
-
-      body {
-        font-family: "Open Sans";
-        background-color: var(--black);
-        color: var(--grey);
-        margin: var(--small-spacing);
-        line-height: 1.4;
-        display: flex;
-        flex-direction: column;
-      }
-
-      h1,
-      h2 {
-        margin-bottom: var(--small-spacing);
-        font-family: "Bebas Neue";
-        line-height: 1;
-      }
-
-      h1 {
-        font-size: 4.236rem;
-      }
-
-      h2 {
-        font-size: 2.618rem;
-      }
-
-      a {
-        color: var(--grey);
-      }
-
-      a:hover {
-        text-decoration: none;
-      }
-
-      footer {
-        text-align: right;
-      }
-    </style>
+    <link rel="stylesheet" href="./src/styles.css" />
   </head>
 
-  <body>
-    <main style="flex: 1;">
-      <h1 style="max-width: 460px">Freelance WordPress Developer</h1>
-      <div style="max-width: 360px">
-        <p style="margin-bottom: var(--small-spacing)">
+  <body class="flex flex-col lg:justify-between gap-y-16 lg:min-h-[100vh] p-4">
+    <main class="flex flex-col sm:flex-row flex-wrap sm:justify-between gap-y-16">
+      <div class="max-w-[360px]">
+        <h1 class="max-w-[460px]">Freelance WordPress Developer</h1>
+        <p>
           8 years of experience turning custom Figma designs into fast WordPress
           websites for agencies.
-
         </p>
-        <p style="margin-bottom: var(--small-spacing)">
+        <p>
           I use ACF Pro, Tailwind CSS and Vite.js for quick delivery while
           keeping the WordPress editor as intuitive as possible.
         </p>
-        <p style="margin-bottom: var(--small-spacing);">
+        <p>
           Moreover, I provide a handover with every project so your clients know
           exactly how to update their website content without hassle.
         </p>
-        <p style="margin-bottom: var(--large-spacing);">
-           <a href="mailto:hello@baillieogrady.com">Email me a link to your Figma designs for a free fixed quote.</a>
+        <p>
+          <a
+            href="mailto:hello@baillieogrady.com"
+            class="underline hover:no-underline"
+            >Email me a link to your Figma designs for a free fixed quote.</a
+          >
         </p>
-        <h2 style="margin-bottom: var(--small-spacing)">Work</h2>
-        <ul style="display: flex; flex-direction: column; gap: 0.25rem">
+      </div>
+
+      <div class="sm:text-right">
+        <h2>Work</h2>
+        <ul class="flex flex-col gap-1">
           <li>
-            <a href="https://www.eastlondonprintmakers.co.uk/"
+            <a
+              href="https://www.eastlondonprintmakers.co.uk/"
+              class="underline hover:no-underline"
               >eastlondonprintmakers.co.uk</a
             >
           </li>
           <li>
-            <a href="https://harlem.capital">harlem.capital</a>
+            <a
+              href="https://harlem.capital"
+              class="underline hover:no-underline"
+              >harlem.capital</a
+            >
           </li>
           <li>
-            <a href="https://whatahowler.com">whatahowler.com</a>
+            <a
+              href="https://whatahowler.com"
+              class="underline hover:no-underline"
+              >whatahowler.com</a
+            >
           </li>
           <li>
-            <a href="https://thehordern.com.au">thehordern.com.au</a>
+            <a
+              href="https://thehordern.com.au"
+              class="underline hover:no-underline"
+              >thehordern.com.au</a
+            >
           </li>
-          <li><a href="https://hotpmo.com">hotpmo.com</a></li>
           <li>
-            <a href="https://la07nkk.com">la07nkk.com</a>
+            <a href="https://hotpmo.com" class="underline hover:no-underline"
+              >hotpmo.com</a
+            >
+          </li>
+          <li>
+            <a href="https://la07nkk.com" class="underline hover:no-underline"
+              >la07nkk.com</a
+            >
           </li>
         </ul>
       </div>
     </main>
+    <footer>
+      <ul class="flex justify-between gap-x-2 w-full">
+        <li>
+          <a
+            href="mailto:hello@baillieogrady.com"
+            class="underline hover:no-underline"
+            >hello@baillieogrady.com</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/baillieogrady/"
+            class="underline hover:no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
